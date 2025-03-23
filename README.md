@@ -90,4 +90,4 @@ sequenceDiagram
 
 2. 訊息處理：伺服器接收到的每條訊息會根據預定義的指令格式進行處理，並將訊息轉發給目標用戶，若目標用戶離線或不存在，則返回錯誤訊息並不執行寫入白板。目標用戶則會在創立一個 Thread 來接收伺服器傳送的訊息。
 
-3. 使用共享資源(變數)：伺服器中有一些共享資源（如`client_socket[MAX_client]`、`char whiteboard[MAX_size`等），因此在存取這些資源時使用了 Mutex 來防止多個 Thread 同時讀寫共享資源。
+3. 使用共享資源(變數)：伺服器中有一些共享資源（如`client_socket[MAX_client]`、`char whiteboard[MAX_size`等），因此再存取這些資源時使用了 Mutex 來防止多個 Thread 同時讀寫共享資源。
